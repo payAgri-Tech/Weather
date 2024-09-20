@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayAgri Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="brand-logo">
+                <h1>PayAgri FarmConnect</h1>
+            </div>
+            <div class="temperature-info">
+                <p id="current-temperature">0.0°C current temperature</p>
+                <p id="location">Current Location</p>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="weather.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h2>India's first crowd-supported weather infrastructure</h2>
+            <p>Largest on-ground network of weather stations installed across the country</p>
+        </div>
+    </section>
+
+    <!-- Weather Stats Section -->
+    <section class="stats">
+        <div class="stat-item">
+            <h3 id="temperature">Loading...</h3>
+            <p>Temperature</p>
+        </div>
+        <div class="stat-item">
+            <h3 id="humidity">Loading...</h3>
+            <p>Humidity</p>
+        </div>
+        <div class="stat-item">
+            <h3 id="wind-speed">Loading...</h3>
+            <p>Wind Speed</p>
+        </div>
+        <div class="stat-item">
+            <h3 id="pressure">Loading...</h3>
+            <p>Pressure</p>
+        </div>
+    </section>
+
+    <!-- Interactive Map and Buttons Section -->
+    <section class="weather-dashboard">
+        <!-- Interactive Map Section -->
+        <div class="weather-map">
+            <h3>Check live weather in your area and other locations</h3>
+            <div id="map" style="height: 400px; width: 100%;"></div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="location-buttons">
+            <button onclick="fetchAndDisplayWeather(13.0827, 80.2707, 'Chennai')">Chennai</button>
+            <button onclick="fetchAndDisplayWeather(11.3410, 77.7172, 'Erode')">Erode</button>
+            <button onclick="fetchAndDisplayWeather(11.6643, 78.1460, 'Salem')">Salem</button>
+            <button onclick="fetchAndDisplayWeather(10.0104, 77.4760, 'Theni')">Theni</button>
+            <button onclick="fetchCurrentLocation()">Current Location</button>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
